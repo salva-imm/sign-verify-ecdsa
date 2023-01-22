@@ -24,11 +24,11 @@ def test_sign(privkey, message):
 if __name__ == "__main__":
     pubkey = "-----BEGIN PUBLIC KEY-----\nME4wEAYHKoZIzj0CAQYFK4EEACEDOgAE5puDej67SK0akoj0E3ocGplYObQcx/ii\nQQ5yMe6l3ogZWNm3bCbvEZ+kCUBJoeSi3SV7IFFiX4E=\n-----END PUBLIC KEY-----"
     privkey = "-----BEGIN PRIVATE KEY-----\nMGgCAQEEHFZohAYiPIo97TdVQTGKPyghByr+3bfhX2ryOmqgBwYFK4EEACGhPAM6\nAATmm4N6PrtIrRqSiPQTehwamVg5tBzH+KJBDnIx7qXeiBlY2bdsJu8Rn6QJQEmh\n5KLdJXsgUWJfgQ==\n-----END PRIVATE KEY-----"
-    message = "message"
+    message = "Hello, world"
     s_m = test_sign(privkey, message)
     print("Signed base64: ", s_m)
     
     # Generated in Golang
-    signed_message = "MD0CHFMQ6M+ZQIS/K2oh+IkDoxVzOyw+FHcCOaxZPW4CHQC+YHDyKvMTXt42EMG6bxr+ccE2upGwKuQPyw+g"
+    signed_message = "MD0CHQDMnLpDfApV5EFQMkIonwHZlUHdCUExY5VTM3UMAhwVChVNMO0Nin/fXYe/XazCzrgIzDg1OFjRiEb0"
     verified = test_verify(pubkey, message, signed_message)
     print("Verified: ", verified)

@@ -175,10 +175,10 @@ func test_sign(privkey, message string) string {
 func main() {
 	pubkey := "-----BEGIN PUBLIC KEY-----\nME4wEAYHKoZIzj0CAQYFK4EEACEDOgAE5puDej67SK0akoj0E3ocGplYObQcx/ii\nQQ5yMe6l3ogZWNm3bCbvEZ+kCUBJoeSi3SV7IFFiX4E=\n-----END PUBLIC KEY-----"
 	privkey := "-----BEGIN PRIVATE KEY-----\nMGgCAQEEHFZohAYiPIo97TdVQTGKPyghByr+3bfhX2ryOmqgBwYFK4EEACGhPAM6\nAATmm4N6PrtIrRqSiPQTehwamVg5tBzH+KJBDnIx7qXeiBlY2bdsJu8Rn6QJQEmh\n5KLdJXsgUWJfgQ==\n-----END PRIVATE KEY-----"
-	msg := "message"
+	msg := "Hello, world"
 
 	// Generated in Python
-	signed_message_base64 := "MDwCHBlD+MaESzkMk8xr/faw91twaBXkEX1tQmI+eTwCHH7FGrZHTRy1TdO2rv57MVSHNqFfARKHU3we8Vg="
+	signed_message_base64 := "MD0CHQD/GfTl6loV0rBNun+85eM0HfhmK5aAgRKNQyeUAhxVhbg3CKKYx1pKLTHAr8Kkozd+7S25X5FomxHC"
 
 	fmt.Println("\n Verfied: ", test_verify(pubkey, msg, signed_message_base64))
 	fmt.Println("\n Signed Base64: ", test_sign(privkey, msg))
